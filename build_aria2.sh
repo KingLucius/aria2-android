@@ -144,6 +144,8 @@ do
     --with-libcares \
     --with-libz \
     --with-libssh2 \
+    --enable-static \
+    ARIA2_STATIC=yes \
     $configure_params \
     CXXFLAGS="-Os -g" \
     CFLAGS="-Os -g" \
