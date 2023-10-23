@@ -144,8 +144,6 @@ do
     --with-libcares \
     --with-libz \
     --with-libssh2 \
-    --enable-static \
-    ARIA2_STATIC=yes \
     $configure_params \
     CXXFLAGS="-Os -g" \
     CFLAGS="-Os -g" \
@@ -156,6 +154,7 @@ do
     
   make $make_params clean || exit
   make -j `nproc` $make_params || exit
+  $STRIP $install_dir/bin/aria2c
   make install || exit
   echo "Done building $target"
 done
