@@ -155,6 +155,9 @@ do
   make $make_params clean || exit
   make -j `nproc` $make_params || exit
   make install || exit
+  $STRIP --strip-all $install_dir/bin/aria2c -o $install_dir/aria2c.so
+  rm -rf $install_dir/bin/
+  rm -rf $install_dir/share/
   echo "Done building $target"
 done
 
